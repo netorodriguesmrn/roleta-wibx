@@ -8,7 +8,7 @@ export default function RootLayout() {
       <StatusBar style="light" /> 
       <Stack>
         <Stack.Screen 
-          name="roletaPage" 
+          name="index" 
           options={{ headerShown: false }} 
         />
       </Stack>
