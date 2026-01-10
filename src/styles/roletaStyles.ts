@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center', 
     // Ajuste de padding: Na web não precisa de tanto espaço em cima
     paddingTop: IS_WEB ? 20 : 90, 
-    paddingBottom: 40,
+    paddingBottom: 150,
     width: '100%', 
   },
   header: {
@@ -121,7 +121,7 @@ export const styles = StyleSheet.create({
   // --- Rodapé e Botão ---
   footer: { 
     position: 'absolute', 
-    bottom: IS_WEB ? 50 : 130, 
+    bottom: IS_WEB ? 90 : 130, 
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
