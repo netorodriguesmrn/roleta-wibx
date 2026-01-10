@@ -1,17 +1,17 @@
 import { Dimensions, Platform, StyleSheet } from "react-native";
 
-// Pega a largura real da janela
 const { width } = Dimensions.get("window");
-
-// --- A CORREÇÃO MÁGICA ---
 const IS_WEB = Platform.OS === 'web';
 
-// Se for WEB, travamos a largura em 400px (tamanho de celular).
-// O cálculo matemático vai usar esse valor fixo e ignorar o monitor gigante.
-const APP_WIDTH = IS_WEB ? 400 : width; 
+// MELHORIA 1: No celular, usamos Math.min para garantir que em telas
+// muito largas (tablets/celulares gigantes) ela não fique monstruosa.
+const APP_WIDTH = IS_WEB ? 400 : Math.min(width, 400); 
 
-// Agora calculamos a roleta baseada nessa largura corrigida
-export const WHEEL_SIZE = APP_WIDTH * 0.85; 
+// MELHORIA 2: Diminuímos de 0.85 para 0.65 (65% da tela)
+// Cálculo: 0.65 (roda) * 1.5 (pino) = 0.975 (97.5% da tela)
+// Assim, o pino fica quase na borda, mas DENTRO da tela.
+export const WHEEL_SIZE = APP_WIDTH * 0.65; 
+
 export const FRAME_SIZE = WHEEL_SIZE * 1.15;
 
 export const styles = StyleSheet.create({
@@ -158,10 +158,10 @@ export const styles = StyleSheet.create({
   },
 
   silvioAnimation: {
-    width: WHEEL_SIZE * 1.3, 
-    height: WHEEL_SIZE * 1.3,
+    width: WHEEL_SIZE * 1.8, 
+    height: WHEEL_SIZE * 1.8,
     transform: [
-        { translateY: 150 } 
+        { translateY: 180 } 
     ],
   }
 });
