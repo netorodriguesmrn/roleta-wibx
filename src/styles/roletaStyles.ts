@@ -10,7 +10,7 @@ const APP_WIDTH = IS_WEB ? 400 : Math.min(width, 400);
 // MELHORIA 2: Diminuímos de 0.85 para 0.65 (65% da tela)
 // Cálculo: 0.65 (roda) * 1.5 (pino) = 0.975 (97.5% da tela)
 // Assim, o pino fica quase na borda, mas DENTRO da tela.
-export const WHEEL_SIZE = APP_WIDTH * 0.65; 
+export const WHEEL_SIZE = APP_WIDTH * 0.75; 
 
 export const FRAME_SIZE = WHEEL_SIZE * 1.15;
 
@@ -158,8 +158,8 @@ export const styles = StyleSheet.create({
   },
 
   silvioAnimation: {
-    width: WHEEL_SIZE * 1.8, 
-    height: WHEEL_SIZE * 1.8,
+    width: WHEEL_SIZE * 2.2, 
+    height: WHEEL_SIZE * 2.2,
     transform: [
         { translateY: 180 } 
     ],
